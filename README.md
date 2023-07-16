@@ -19,7 +19,7 @@ npm install fs-lite
 import fs from 'fs-lite'
 ```
 
-## Mehtods
+## Methods
 
 ### Async
 
