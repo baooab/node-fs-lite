@@ -1,5 +1,5 @@
 {
-  "name": "fs-lite",
+  "name": "@zhangbao/fs-lite",
   "version": "0.0.1",
   "description": "A lightweight alternative to `fs-extra`",
   "type": "module",
@@ -27,7 +27,7 @@
     "file system",
     "copy",
     "directory",
-    "extra",
+    "lite",
     "mkdirp",
     "mkdir",
     "mkdirs",

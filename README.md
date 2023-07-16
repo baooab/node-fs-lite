@@ -10,13 +10,13 @@ A lightweight alternative to `fs-extra`.
 ## Installation
 
 ```bash
-npm install fs-lite
+npm install @zhangbao/fs-lite
 ```
 
 ## Usage
 
 ```js
-import fs from 'fs-lite'
+import fs from '@zhangbao/fs-lite'
 ```
 
 ## Methods
