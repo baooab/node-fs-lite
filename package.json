@@ -3,6 +3,13 @@
   "version": "0.0.3",
   "description": "A lightweight alternative to `fs-extra`",
   "type": "module",
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baooab/node-fs-lite.git"
+  },
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
