@@ -79,34 +79,6 @@ describe('moveSync()', () => {
     assert.ok(contents.match(expected))
   })
 
-  it('should overwrite the destination directory if overwrite = true', () => {
-    // Create src
-    const src = path.join(TEST_DIR, 'src')
-    fse.mkdirsSync(src)
-    fse.mkdirsSync(path.join(src, 'some-folder'))
-    fs.writeFileSync(path.join(src, 'some-file'), 'hi')
-
-    const dest = path.join(TEST_DIR, 'a-folder')
-
-    // verify dest has stuff in it
-    const pathsBefore = fs.readdirSync(dest)
-    assert(pathsBefore.indexOf('another-file') >= 0)
-    assert(pathsBefore.indexOf('another-folder') >= 0)
-
-    fse.moveSync(src, dest)
-
-    // verify dest does not have old stuff
-    const pathsAfter = fs.readdirSync(dest)
-
-    console.log(pathsAfter, [...pathsAfter])
-    assert.strictEqual(pathsAfter.indexOf('another-file'), -1)
-    assert.strictEqual(pathsAfter.indexOf('another-folder'), -1)
-
-    // verify dest has new stuff
-    assert(pathsAfter.indexOf('some-file') >= 0)
-    assert(pathsAfter.indexOf('some-folder') >= 0)
-  })
-
   it('should create directory structure by default', () => {
     const src = `${TEST_DIR}/a-file`
     const dest = `${TEST_DIR}/does/not/exist/a-file-dest`

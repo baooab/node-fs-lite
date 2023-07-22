@@ -102,14 +102,6 @@ describe('+ copySync() / file', () => {
       })
 
       describe('> when destination file does NOT exist', () => {
-        describe('> when overwrite is true', () => {
-          it('should copy the file and not throw an error', () => {
-            fse.copySync(src, dest)
-            const destData = fs.readFileSync(dest, 'utf8')
-            assert.strictEqual(srcData, destData)
-          })
-        })
-
         describe('> when overwrite is false', () => {
           it('should copy the file and not throw an error', () => {
             fse.copySync(src, dest)
