@@ -19,7 +19,7 @@ npm install @zhangbao/fs-lite
 import fs from '@zhangbao/fs-lite'
 ```
 
-## Methods
+## [WIP] Methods
 
 ### Async
 
@@ -40,10 +40,65 @@ import fs from '@zhangbao/fs-lite'
 - `copySync`(alias: `ncpSync`)
 - `moveSync`
 - `removeSync`
+
+```ts
+// Syntax: removeSync(path: string)
+// Description: Removes a file or directory. The directory can have contents. 
+//              If the path does not exist, silently does nothing.
+
+// Examples
+
+// remove file
+fs.removeSync('/tmp/myfile')
+
+fs.removeSync('/home/jprichardson') // I just deleted my entire HOME directory.
+```
+
 - `mkdirsSync`(alias: `mkdirpSync`, `ensureDirSync`)
+
+```ts
+// Syntax: mkdirsSync(dir: string)
+// Description: Ensures that the directory exists. 
+//              If the directory structure does not exist, it is created.
+//              If provided, silently do nothing.
+
+// Examples
+
+fs.ensureDirSync('path/to/dir')
+// dir has now been created, including the directory it is to be placed in
+```
+
 - `emptyDirSync`
 - `createFileSync`
+
+```ts
+// Syntax: createFileSync(file: string, content: string = '')
+// Description: Create a file using optional content string
+//              If provided, silently do nothing.
+
+// Examples
+
+createFileSync('path/to/file')
+// Create a file without content(default use a empty string(`''`))
+createFileSync('path/to/file', 'hello world')
+// Create a file with content
+```
+
 - `readFileSync`
+
+```ts
+// Syntax: readFileSync(file: string)
+// Description: Reads a file content.
+
+// Examples
+
+readFileSync('path/to/file')
+// return file content, a string value
+
+readFileSync('path/to/not/exist/file')
+// return `undefined`
+```
+
 - `writeFileSync`
 - `readJsonSync`
 - `writeJsonSync`
