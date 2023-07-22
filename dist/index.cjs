@@ -73,10 +73,9 @@ function copySync(source, destination) {
   }
 }
 function copyDirSync(source, destination) {
-  if (node_fs.existsSync(destination)) {
-    node_fs.rmSync(destination, { recursive: true, force: true });
+  if (!node_fs.existsSync(destination)) {
+    node_fs.mkdirSync(destination, { recursive: true });
   }
-  node_fs.mkdirSync(destination, { recursive: true });
   for (const file of node_fs.readdirSync(source)) {
     const srcFile = path__default.resolve(source, file);
     const destFile = path__default.resolve(destination, file);

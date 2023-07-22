@@ -115,7 +115,6 @@ $ cd node-fs-lite
 
 run test after change:
 
-
 ```bash
 $ npm run test
 ```
@@ -123,6 +122,9 @@ $ npm run test
 commit changes:
 
 ```bash
+# build first
+$ npm run build
+# then commit to git
 $ git add .
 $ git commit -m 'message to show your changes' # see [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 ```
