@@ -4,6 +4,7 @@ specifiers:
   '@types/node': ^20.4.2
   '@vitest/coverage-v8': ^0.33.0
   '@vitest/ui': ^0.33.0
+  husky: ^8.0.3
   unbuild: ^1.2.1
   vitest: ^0.33.0
 
@@ -11,6 +12,7 @@ devDependencies:
   '@types/node': 20.4.2
   '@vitest/coverage-v8': 0.33.0_vitest@0.33.0
   '@vitest/ui': 0.33.0_vitest@0.33.0
+  husky: 8.0.3
   unbuild: 1.2.1
   vitest: 0.33.0_@vitest+ui@0.33.0
 
@@ -1278,6 +1280,12 @@ packages:
 
   /html-escaper/2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
+    dev: true
+
+  /husky/8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /ignore/5.2.4:

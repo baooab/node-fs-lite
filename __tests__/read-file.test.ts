@@ -29,7 +29,7 @@ describe('read-file', () => {
 
     it('should error if it cant read the file', done => {
       const file = path.join(TEST_DIR, 'file2.json')
-      assert.strictEqual(fse.readFileSync(file) , undefined)
+      assert.strictEqual(fse.readFileSync(file) , null)
     })
   })
 

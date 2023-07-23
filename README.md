@@ -19,7 +19,7 @@ npm install @zhangbao/fs-lite
 import fs from '@zhangbao/fs-lite'
 ```
 
-## [WIP] Methods
+## Methods
 
 ### Async
 
@@ -40,6 +40,53 @@ import fs from '@zhangbao/fs-lite'
 - `copySync`(alias: `ncpSync`)
 - `moveSync`
 - `removeSync`
+- `mkdirsSync`(alias: `mkdirpSync`, `ensureDirSync`)
+- `emptyDirSync`
+- `createFileSync`
+- `readFileSync`
+- `writeFileSync`
+- `readJsonSync`
+- `writeJsonSync`
+- `pathExistsSync`
+
+## Doc
+
+fs-lite's implementation is sync-first, the async method is just the result of asynchronization of the corresponding sync method(via internal `toAsync` function).Therefore, the following only lists the API of sync method.
+
+```ts
+// sync method
+fs.copySync('/tmp/myfile', '/tmp/mynewfile')
+// corresponding to the async method, just add an `await` keyword in front.
+await fs.copy('/tmp/myfile', '/tmp/mynewfile')
+```
+
+### `copySync`(alias: `ncpSync`)
+
+```ts
+// Syntax: copySync(source: string, destination: string)
+// Description: Copy a file or directory. The directory can have contents.
+//              Overwrite if file or directory exists.
+
+// Examples
+
+// copy file
+fs.copySync('/tmp/myfile', '/tmp/mynewfile')
+
+// copy directory, even if it has subdirectories or files
+fs.copySync('/tmp/mydir', '/tmp/mynewdir')
+```
+
+### `moveSync`
+
+```ts
+// Syntax: 
+// Description: Moves a file or directory
+//              Overwrite if file or directory exists.
+
+fs.moveSync('/tmp/somefile', '/tmp/does/not/exist/yet/somefile')
+```
+
+### `removeSync`
 
 ```ts
 // Syntax: removeSync(path: string)
@@ -54,7 +101,7 @@ fs.removeSync('/tmp/myfile')
 fs.removeSync('/home/jprichardson') // I just deleted my entire HOME directory.
 ```
 
-- `mkdirsSync`(alias: `mkdirpSync`, `ensureDirSync`)
+### `mkdirsSync`(alias: `mkdirpSync`, `ensureDirSync`)
 
 ```ts
 // Syntax: mkdirsSync(dir: string)
@@ -68,8 +115,21 @@ fs.ensureDirSync('path/to/dir')
 // dir has now been created, including the directory it is to be placed in
 ```
 
-- `emptyDirSync`
-- `createFileSync`
+### `emptyDirSync`
+
+```ts
+// Syntax: emptyDirSync(dir: string)
+// Description: Emptys a directory.
+//              Deletes directory contents if the directory is not empty. The directory itself is not deleted.
+//              If the directory does not exist, silently do nothing.
+
+// Examples
+
+// assume this directory has a lot of files and folders
+fs.emptyDirSync('/tmp/some/dir')
+```
+
+### `createFileSync`
 
 ```ts
 // Syntax: createFileSync(file: string, content: string = '')
@@ -84,11 +144,12 @@ createFileSync('path/to/file', 'hello world')
 // Create a file with content
 ```
 
-- `readFileSync`
+### `readFileSync`
 
 ```ts
-// Syntax: readFileSync(file: string)
+// Syntax: readFileSync(file: string): string | null
 // Description: Reads a file content.
+//              If the file does not exist, return null.
 
 // Examples
 
@@ -96,13 +157,58 @@ readFileSync('path/to/file')
 // return file content, a string value
 
 readFileSync('path/to/not/exist/file')
-// return `undefined`
+// return `null`
 ```
 
-- `writeFileSync`
-- `readJsonSync`
-- `writeJsonSync`
-- `pathExistsSync`
+### `writeFileSync`
+
+```ts
+// Syntax: writeFileSync(file: string, content: string)
+// Description: Writes content to a file.
+
+// Examples
+
+fs.writeJsonSync('./hello.txt', 'hello world')
+```
+
+### `readJsonSync`
+
+```ts
+// Syntax: readJsonSync(file: string): Record<string, any> | null
+// Description: Reads a JSON file and then parses it into an object.
+//              If the file does not exist, return null.
+
+// Examples
+
+const packageObj = fs.readJsonSync('./package.json')
+console.log(packageObj.version) // => 2.0.0
+```
+
+### `writeJsonSync`
+
+```ts
+// Syntax: writeJsonSync(file: string, object: Record<string, any>)
+// Description: Writes an object to a JSON file.
+
+// Examples
+
+fs.writeJsonSync('./package.json', {name: 'fs-extra'})
+```
+
+### `pathExistsSync`
+
+```ts
+// Syntax: 
+// Description: Test whether or not the given path exists by checking with the file system.
+//              An alias for fs.existsSync().
+
+// Examples
+
+fs.pathExists('/tmp/this/path/does/not/exist/file.txt')
+// false
+fs.pathExists('/tmp/this/path/does/exist/file.txt')
+// true
+```
 
 ## Development
 
@@ -126,7 +232,8 @@ commit changes:
 $ npm run build
 # then commit to git
 $ git add .
-$ git commit -m 'message to show your changes' # see [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+# see [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+$ git commit -m 'message to show your changes'
 ```
 
 publish:
