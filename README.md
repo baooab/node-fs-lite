@@ -79,7 +79,7 @@ fs.copySync('/tmp/mydir', '/tmp/mynewdir')
 ### `moveSync`
 
 ```ts
-// Syntax: 
+// Syntax: moveSync(source: string, destination: string)
 // Description: Moves a file or directory
 //              Overwrite if file or directory exists.
 

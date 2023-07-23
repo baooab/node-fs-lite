@@ -9,7 +9,7 @@ const path__default = /*#__PURE__*/_interopDefaultCompat(path);
 
 function readFileSync(file) {
   if (!node_fs.existsSync(file)) {
-    return;
+    return null;
   }
   return node_fs.readFileSync(file, { encoding: "utf-8" });
 }
@@ -30,8 +30,8 @@ function writeFileSync(file, content) {
   return node_fs.writeFileSync(file, content, { encoding: "utf-8" });
 }
 
-function writeJsonSync(file, content) {
-  return writeFileSync(file, JSON.stringify(content, null, 2));
+function writeJsonSync(file, object) {
+  return writeFileSync(file, JSON.stringify(object, null, 2));
 }
 
 function createFileSync(file, content = "") {
@@ -73,9 +73,10 @@ function copySync(source, destination) {
   }
 }
 function copyDirSync(source, destination) {
-  if (!node_fs.existsSync(destination)) {
-    node_fs.mkdirSync(destination, { recursive: true });
+  if (node_fs.existsSync(destination)) {
+    node_fs.rmSync(destination, { recursive: true, force: true });
   }
+  node_fs.mkdirSync(destination, { recursive: true });
   for (const file of node_fs.readdirSync(source)) {
     const srcFile = path__default.resolve(source, file);
     const destFile = path__default.resolve(destination, file);

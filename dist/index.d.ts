@@ -1,12 +1,12 @@
-declare function readJsonSync(file: string): Record<string, any> | undefined;
+declare function readJsonSync(file: string): Record<string, any> | null;
 
-declare function writeJsonSync(file: string, content: Record<string, any>): void;
+declare function writeJsonSync(file: string, object: Record<string, any>): void;
 
 declare function createFileSync(file: string, content?: string): void;
 
 declare function writeFileSync(file: string, content: string): void;
 
-declare function readFileSync(file: string): string | undefined;
+declare function readFileSync(file: string): string | null;
 
 declare function mkdirsSync(dir: string): string;
 
@@ -21,7 +21,7 @@ declare function moveSync(source: string, destination: string): void;
 declare function removeSync(path: string): void;
 
 declare const readJson: (file: string) => Promise<Record<string, any>>;
-declare const writeJson: (file: string, content: Record<string, any>) => Promise<void>;
+declare const writeJson: (file: string, object: Record<string, any>) => Promise<void>;
 declare const createFile: (file: string, content?: string) => Promise<void>;
 declare const writeFile: (file: string, content: string) => Promise<void>;
 declare const readFile: (file: string) => Promise<string>;

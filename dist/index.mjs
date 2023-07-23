@@ -3,7 +3,7 @@ import path from 'node:path';
 
 function readFileSync(file) {
   if (!existsSync(file)) {
-    return;
+    return null;
   }
   return readFileSync$1(file, { encoding: "utf-8" });
 }
@@ -24,8 +24,8 @@ function writeFileSync(file, content) {
   return writeFileSync$1(file, content, { encoding: "utf-8" });
 }
 
-function writeJsonSync(file, content) {
-  return writeFileSync(file, JSON.stringify(content, null, 2));
+function writeJsonSync(file, object) {
+  return writeFileSync(file, JSON.stringify(object, null, 2));
 }
 
 function createFileSync(file, content = "") {
@@ -67,9 +67,10 @@ function copySync(source, destination) {
   }
 }
 function copyDirSync(source, destination) {
-  if (!existsSync(destination)) {
-    mkdirSync(destination, { recursive: true });
+  if (existsSync(destination)) {
+    rmSync(destination, { recursive: true, force: true });
   }
+  mkdirSync(destination, { recursive: true });
   for (const file of readdirSync(source)) {
     const srcFile = path.resolve(source, file);
     const destFile = path.resolve(destination, file);
