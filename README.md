@@ -198,7 +198,7 @@ fs.writeJsonSync('./package.json', {name: 'fs-extra'})
 ### `pathExistsSync`
 
 ```ts
-// Syntax: 
+// Syntax: pathExistsSync(path: string)
 // Description: Test whether or not the given path exists by checking with the file system.
 //              An alias for fs.existsSync().
 
@@ -228,12 +228,13 @@ $ npm run test
 commit changes:
 
 ```bash
-# build first
-$ npm run build
 # then commit to git
 $ git add .
 # see [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 $ git commit -m 'message to show your changes'
+
+# commit rebuild assets(automation via husky)
+$ git commit -m 'chore: rebuild'
 ```
 
 publish:
