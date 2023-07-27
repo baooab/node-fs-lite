@@ -49,7 +49,7 @@ import fs from '@zhangbao/fs-lite'
 - `writeJsonSync`
 - `pathExistsSync`
 
-## Doc
+## Docs
 
 fs-lite's implementation is sync-first, the async method is just the result of asynchronization of the corresponding sync method(via internal `toAsync` function).Therefore, the following only lists the API of sync method.
 
@@ -98,7 +98,7 @@ fs.moveSync('/tmp/somefile', '/tmp/does/not/exist/yet/somefile')
 // remove file
 fs.removeSync('/tmp/myfile')
 
-fs.removeSync('/home/jprichardson') // I just deleted my entire HOME directory.
+fs.removeSync('/home/zhangbao') // I just deleted my entire HOME directory.
 ```
 
 ### `mkdirsSync`(alias: `mkdirpSync`, `ensureDirSync`)
@@ -232,9 +232,6 @@ commit changes:
 $ git add .
 # see [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 $ git commit -m 'message to show your changes'
-
-# commit rebuild assets(automation via husky)
-$ git commit -m 'chore: rebuild'
 ```
 
 publish:
