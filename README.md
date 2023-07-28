@@ -1,25 +1,37 @@
-# ⚡ fs-lite
+<div align="center">
+
+# fs-lite ⚡
 
 A lightweight alternative to `fs-extra`.
 
-- ✨ esm-based source code
-- 🎉 no dependencies
-- 🪄 sync-based async function
-- 👍 type safe
+![NPM version](https://img.shields.io/npm/v/@zhangbao/fs-lite
+) ![NPM downloads](https://img.shields.io/npm/dw/@zhangbao/fs-lite.svg?style=flat) ![npm](https://img.shields.io/github/issues/baooab/node-fs-lite)
+</div>
 
-## Installation
+## ✨ Features
+
+- 💡 ESM-based Source Code
+- 🎉 No Dependencies
+- 🪄 Sync-based Async Function
+- 🔑 Fully Typed APIs
+
+## 📦 Install
 
 ```bash
-npm install @zhangbao/fs-lite
+$ npm install --save @zhangbao/fs-lite
+# or
+$ yarn add @zhangbao/fs-lite
+# or
+$ pnpm add @zhangbao/fs-lite
 ```
 
-## Usage
+## 🔨 Usage
 
 ```js
 import fs from '@zhangbao/fs-lite'
 ```
 
-## Methods
+## 🛠️ Methods
 
 ### Async
 
@@ -49,7 +61,7 @@ import fs from '@zhangbao/fs-lite'
 - `writeJsonSync`
 - `pathExistsSync`
 
-## Docs
+## 📚 Documentation
 
 fs-lite's implementation is sync-first, the async method is just the result of asynchronization of the corresponding sync method(via internal `toAsync` function).Therefore, the following only lists the API of sync method.
 
@@ -210,7 +222,7 @@ fs.pathExists('/tmp/this/path/does/exist/file.txt')
 // true
 ```
 
-## Development
+## 🤝 Contributing
 
 download:
 
@@ -244,7 +256,7 @@ $ git push
 $ giy push --tags
 ```
 
-## License
+## 📓 License
 
 Licensed under MIT
 
