@@ -98,7 +98,6 @@ describe('moveSync()', () => {
     // verify dest does not have old stuff
     const pathsAfter = fs.readdirSync(dest)
 
-    console.log(pathsAfter, [...pathsAfter])
     assert.strictEqual(pathsAfter.indexOf('another-file'), -1)
     assert.strictEqual(pathsAfter.indexOf('another-folder'), -1)
 
