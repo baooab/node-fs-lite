@@ -5,7 +5,7 @@
 A lightweight alternative to `fs-extra`.
 
 ![NPM version](https://img.shields.io/npm/v/@zhangbao/fs-lite
-) ![NPM downloads](https://img.shields.io/npm/dw/@zhangbao/fs-lite.svg?style=flat) ![npm](https://img.shields.io/github/issues/baooab/node-fs-lite)
+)  ![Node Compatibility](https://img.shields.io/node/v/vite.svg) ![NPM downloads](https://img.shields.io/npm/dw/@zhangbao/fs-lite.svg?style=flat) ![npm](https://img.shields.io/github/issues/baooab/node-fs-lite)
 </div>
 
 ## ✨ Features
