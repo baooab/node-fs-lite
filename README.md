@@ -231,12 +231,6 @@ $ git clone https://github.com/baooab/node-fs-lite.git
 $ cd node-fs-lite
 ```
 
-run test after change:
-
-```bash
-$ npm run test
-```
-
 commit changes:
 
 ```bash
