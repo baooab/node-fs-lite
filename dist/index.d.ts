@@ -1,3 +1,6 @@
+export * from 'node:fs';
+export { default } from 'node:fs';
+
 declare function readJsonSync(file: string): Record<string, any> | null;
 
 declare function writeJsonSync(file: string, object: Record<string, any>): void;

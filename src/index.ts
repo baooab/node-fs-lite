@@ -36,6 +36,9 @@ const ensureFileSync = createFileSync
 const rimrafSync = removeSync
 const ncpSync = copySync
 
+export * from 'node:fs'
+export { default } from 'node:fs'
+
 export {
   // async methods
   readJson,

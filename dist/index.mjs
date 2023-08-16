@@ -1,4 +1,6 @@
 import { existsSync, readFileSync as readFileSync$1, rmSync, mkdirSync, writeFileSync as writeFileSync$1, readdirSync, statSync, copyFileSync } from 'node:fs';
+export * from 'node:fs';
+export { default } from 'node:fs';
 import path from 'node:path';
 
 function readFileSync(file) {

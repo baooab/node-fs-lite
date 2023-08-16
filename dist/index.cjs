@@ -1,10 +1,13 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 const node_fs = require('node:fs');
 const path = require('node:path');
 
 function _interopDefaultCompat (e) { return e && typeof e === 'object' && 'default' in e ? e.default : e; }
 
+const node_fs__default = /*#__PURE__*/_interopDefaultCompat(node_fs);
 const path__default = /*#__PURE__*/_interopDefaultCompat(path);
 
 function readFileSync(file) {
@@ -121,6 +124,7 @@ const ensureFileSync = createFileSync;
 const rimrafSync = removeSync;
 const ncpSync = copySync;
 
+exports.default = node_fs__default;
 exports.copy = copy;
 exports.copySync = copySync;
 exports.createFile = createFile;
@@ -153,3 +157,6 @@ exports.writeFile = writeFile;
 exports.writeFileSync = writeFileSync;
 exports.writeJson = writeJson;
 exports.writeJsonSync = writeJsonSync;
+Object.keys(node_fs).forEach(function (k) {
+  if (k !== 'default' && !Object.prototype.hasOwnProperty.call(exports, k)) exports[k] = node_fs[k];
+});
