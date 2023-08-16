@@ -247,7 +247,7 @@ $ npm version patch # or minor/major
 $ npm publish
 # push chanegs to remote branch(Github)
 $ git push
-$ giy push --tags
+$ git push --tags
 ```
 
 ## 📓 License
