@@ -245,7 +245,7 @@ publish:
 ```bash
 $ npm version patch # or minor/major
 $ npm publish
-# push chanegs to remote branch(Github)
+# push changes to remote branch(Github)
 $ git push
 $ git push --tags
 ```

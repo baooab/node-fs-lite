@@ -1,7 +1,7 @@
 {
   "name": "@zhangbao/fs-lite",
   "version": "0.0.8",
-  "description": "A lightweight alternative to `fs-extra`",
+  "description": "A lightweight alternative to fs-extra",
   "type": "module",
   "engines": {
     "node": "^14.18.0 || >=16.0.0"
