@@ -23,9 +23,6 @@ function readJsonSync(file) {
 }
 
 function writeFileSync(file, content) {
-  if (node_fs.existsSync(file)) {
-    node_fs.rmSync(file, { recursive: true, force: true });
-  }
   const dir = path__default.dirname(file);
   if (!node_fs.existsSync(dir)) {
     node_fs.mkdirSync(dir, { recursive: true });

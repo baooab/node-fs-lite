@@ -1,4 +1,4 @@
-import { existsSync, readFileSync as readFileSync$1, rmSync, mkdirSync, writeFileSync as writeFileSync$1, readdirSync, statSync, copyFileSync } from 'node:fs';
+import { existsSync, readFileSync as readFileSync$1, mkdirSync, writeFileSync as writeFileSync$1, readdirSync, rmSync, statSync, copyFileSync } from 'node:fs';
 export * from 'node:fs';
 export { default } from 'node:fs';
 import path from 'node:path';
@@ -16,9 +16,6 @@ function readJsonSync(file) {
 }
 
 function writeFileSync(file, content) {
-  if (existsSync(file)) {
-    rmSync(file, { recursive: true, force: true });
-  }
   const dir = path.dirname(file);
   if (!existsSync(dir)) {
     mkdirSync(dir, { recursive: true });
