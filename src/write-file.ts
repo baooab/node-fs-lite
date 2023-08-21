@@ -1,5 +1,5 @@
 import path from 'node:path'
-import { existsSync, mkdirSync, rmSync, writeFileSync as _writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, writeFileSync as _writeFileSync } from 'node:fs'
 
 export function writeFileSync(file: string, content: string) {
   const dir = path.dirname(file)
