@@ -27,8 +27,32 @@ $ pnpm add @zhangbao/fs-lite
 
 ## 🔨 Usage
 
+ES Module:
+
 ```js
-import fs from '@zhangbao/fs-lite'
+import * as fs from '@zhangbao/fs-lite'
+
+fs.readJson('./package.json')
+
+// OR
+
+import { readJson } from '@zhangbao/fs-lite'
+
+readJson('./package.json')
+```
+
+CommonJS:
+
+```js
+const fs = require('@zhangbao/fs-lite')
+
+fs.readJson('./package.json')
+
+// OR
+
+const { readJson } = require('@zhangbao/fs-lite')
+
+readJson('./package.json')
 ```
 
 ## 🛠️ Methods
